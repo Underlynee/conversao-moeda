@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas - Challenge Alura</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            line-height: 1.6;
+            background-color: #f6f8fa;
+            color: #24292e;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 30px;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+        }
+        h1, h2, h3 {
+            border-bottom: 2px solid #eaecef;
+            padding-bottom: 10px;
+            margin-top: 24px;
+        }
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; }
+        h3 { font-size: 1.25em; }
+        code {
+            background-color: #f1f1f1;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+        }
+        pre {
+            background-color: #2d2d2d;
+            color: #f1f1f1;
+            padding: 15px;
+            border-radius: 6px;
+            overflow: auto;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>☕ Conversor de Moedas (Challenge Alura ONE)</h1>
+
+    <p><strong>Status: Concluído ✔️</strong></p>
+
+    <p>Este projeto é o primeiro Challenge do programa Alura ONE (Oracle Next Education), focado em Lógica de Programação e Java. O objetivo foi construir um aplicativo de console capaz de converter valores monetários entre diferentes moedas, consumindo uma API de taxas de câmbio em tempo real.</p>
+
+    <hr>
+
+    <h2>🚀 Funcionalidades</h2>
+    <ul>
+        <li><strong>Menu Interativo:</strong> Um menu de console que se repete, permitindo ao usuário realizar múltiplas operações.</li>
+        <li><strong>Consumo de API:</strong> O sistema se conecta à API <a href="https://www.exchangerate-api.com/">ExchangeRate-API</a> para buscar as taxas de câmbio mais recentes.</li>
+        <li><strong>6 Conversões Diferentes:</strong> O menu oferece 6 pares de conversão pré-definidos:
+            <ol>
+                <li>Dólar (USD) =>> Peso Argentino (ARS)</li>
+                <li>Peso Argentino (ARS) =>> Dólar (USD)</li>
+                <li>Dólar (USD) =>> Real Brasileiro (BRL)</li>
+                <li>Real Brasileiro (BRL) =>> Dólar (USD)</li>
+                <li>Dólar (USD) =>> Peso Colombiano (COP)</li>
+                <li>Peso Colombiano (COP) =>> Dólar (USD)</li>
+            </ol>
+        </li>
+        <li><strong>Cálculo de Conversão:</strong> O usuário informa um valor e o programa calcula e exibe o valor convertido.</li>
+        <li><strong>Loop de Conversão (Opcional):</strong> Permite ao usuário realizar várias conversões do mesmo par sem precisar voltar ao menu principal.</li>
+    </ul>
+
+    <hr>
+
+    <h2>🛠️ Tecnologias Utilizadas</h2>
+    <ul>
+        <li>Java (JDK 17+)</li>
+        <li>IntelliJ IDEA (Ambiente de Desenvolvimento)</li>
+        <li>ExchangeRate-API (API para taxas de câmbio)</li>
+        <li><code>HttpURLConnection</code> (Classe Java para fazer a requisição HTTP)</li>
+        <li>GSON (by Google) (Biblioteca para "parsear" o JSON da resposta da API)</li>
+    </ul>
+
+    <hr>
+
+    <h2>⚙️ Como Executar</h2>
+
+    <h3>Pré-requisitos:</h3>
+    <ul>
+        <li>Java JDK 17 ou superior.</li>
+        <li>IntelliJ IDEA ou outra IDE de sua preferência.</li>
+    </ul>
+
+    <h3>1. Obtenha sua Chave da API:</h3>
+    <p>Este projeto requer uma chave de API da <a href="https://www.exchangerate-api.com/">ExchangeRate-API</a>.</p>
+    <p>No código (provavelmente na classe <code>ConsultaApiTaxas</code> ou similar), você deve substituir o placeholder <code>"SUA_API_KEY"</code> pela sua chave pessoal.</p>
+    <pre><code>
+String url_str = "https://v6.exchangerate-api.com/v6/SUA_API_KEY/pair/BRL/USD";
+    </code></pre>
+
+    <h3>2. Adicione a Biblioteca GSON:</h3>
+    <p>Este projeto depende do GSON para funcionar.</p>
+    <ol>
+        <li>Baixe o arquivo <code>.jar</code> do GSON (ex: <code>gson-2.10.1.jar</code>).</li>
+        <li>No IntelliJ, adicione-o como uma dependência do projeto:</li>
+        <ul>
+            <li><code>File</code> > <code>Project Structure...</code></li>
+            <li><code>Modules</code> > <code>Dependencies</code></li>
+            <li>Clique no <code>+</code> > <code>JARs or directories...</code></li>
+            <li>Selecione o arquivo <code>.jar</code> que você baixou.</li>
+        </ul>
+    </ol>
+
+    <h3>3. Execute:</h3>
+    <ol>
+        <li>Abra a classe principal que contém o método <code>main</code> (ex: <code>Main.java</code>).</li>
+        <li>Clique em "Run".</li>
+    </ol>
+
+    <hr>
+
+    <h2>🧠 O que foi Aprendido</h2>
+    <p>Este projeto foi uma imersão prática em conceitos fundamentais do Java, especialmente na comunicação com a web:</p>
+    <ul>
+        <li><strong>Requisições HTTP:</strong> Como fazer uma "chamada" para um servidor web usando <code>HttpURLConnection</code> e pegar a resposta.</li>
+        <li><strong>Leitura de Dados (I/O):</strong> O fluxo complexo de "tradução" dos dados da web:
+            <ul>
+                <li><code>InputStream</code> (O "cano" de bytes brutos)</li>
+                <li><code>InputStreamReader</code> (O "tradutor" de bytes para caracteres)</li>
+            </ul>
+        </li>
+        <li><strong>Parse de JSON:</strong> O que é JSON e como usar a biblioteca GSON (<code>JsonParser</code>, <code>JsonElement</code>, <code>JsonObject</code>) para navegar e extrair os dados que precisamos (como o <code>conversion_rate</code>).</li>
+        <li><strong>Estruturas de Controle:</strong>
+            <ul>
+                <li>O uso do <code>do-while</code> para criar um menu que se repete.</li>
+                <li>O uso do <code>switch-case</code> para "rotear" as opções do usuário.</li>
+                <li>A importância crítica do <code>break;</code> para evitar o "fall-through".</li>
+            </ul>
+        </li>
+        <li><strong>Tratamento de Input (Scanner):</strong>
+            <ul>
+                <li>A diferença fundamental entre <code>next()</code> e <code>nextLine()</code> e como lidar com o bug do "Enter Fantasma" 👻.</li>
+            </ul>
+        </li>
+        <li><strong>Comparação de Strings:</strong> A diferença vital entre usar <code>==</code> (que compara a memória) e <code>.equals()</code> (que compara o conteúdo) para <code>Strings</code>.</li>
+    </ul>
+
+    <hr>
+
+    <h2>👨‍💻 Autor</h2>
+    <p>Feito por <strong>Rennan Tavares</strong> (coloque seu nome aqui!) como parte do Challenge Alura ONE.</p>
+
+</body>
+</html>
