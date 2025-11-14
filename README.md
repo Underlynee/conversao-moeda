@@ -1,3 +1,8 @@
+
+
+<img width="500" height="500" alt="Badge-Conversor" src="https://github.com/user-attachments/assets/6527b0bb-eee7-465a-810c-b92452a1b53a" />
+
+
 ☕ Conversor de Moedas — Challenge Alura ONE
 
 Status: ✔️ Concluído
@@ -42,5 +47,6 @@ HttpURLConnection (Java nativo)
 GSON (Google) para leitura e interpretação de JSON
 
 FEITO POR: RENNAN TAVARES
+
 
 
